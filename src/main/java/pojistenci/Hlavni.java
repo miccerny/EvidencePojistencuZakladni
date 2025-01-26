@@ -19,33 +19,33 @@ public class Hlavni {
 
 
         // Cyklus menu pojištěnců
-        while(volba != 4){
+        while (volba != 4) {
 
-        // Metoa
+            // Metoa
             zobrazitMenu();
             volba = Integer.parseInt(vstup.nextLine());
 
-        switch (volba){
+            switch (volba) {
 
-            case 1:
-                pridatPopjistence();
-                break;
+                case 1:
+                    pridatPopjistence();
+                    break;
 
-            case 2:
-                zobrazitVsechny();
-                break;
+                case 2:
+                    zobrazitVsechny();
+                    break;
 
-            case 3:
-                vyhledatPojistence();
-                break;
-            case 4:
-                System.out.println("Konec programu.\n");
-               break;
+                case 3:
+                    vyhledatPojistence();
+                    break;
+                case 4:
+                    System.out.println("Konec programu.\n");
+                    break;
 
-            default:
-                System.out.println("neplatná volba!\n");
-        }
-        System.out.println("\nPokračujte stisknutím libovolné klávesy...\n");
+                default:
+                    System.out.println("neplatná volba!\n");
+            }
+            System.out.println("\nPokračujte stisknutím libovolné klávesy...\n");
         }
 
     }
@@ -59,12 +59,12 @@ public class Hlavni {
         System.out.println("4 - Konec");
     }
 
-    private void pridatPopjistence(){
+    private void pridatPopjistence() {
 
-       String jmeno = kontrolaJmena("Zadejte jméno:");
-       String prijmeni = kontrolaJmena("Zadejte příjmení:");
-       int vek = kontrolaCiselnehoVstupu("Zadejte věk: ");
-       String telefon = kontrolaTelCisla("Zadejte telefonní číslo:");
+        String jmeno = kontrolaJmena("Zadejte jméno:");
+        String prijmeni = kontrolaJmena("Zadejte příjmení:");
+        int vek = kontrolaCiselnehoVstupu("Zadejte věk: ");
+        String telefon = kontrolaTelCisla("Zadejte telefonní číslo:");
         Pojistenci novyPopjistenec = new Pojistenci(jmeno, prijmeni, vek, telefon);
         pojistenec.pridaniPojistence(novyPopjistenec);
         System.out.println("Data byla uložena");
@@ -74,35 +74,35 @@ public class Hlavni {
        pojistenec.vypisSeznamuPojistencu();
     }
 
-    private void vyhledatPojistence(){
-       String jmeno =kontrolaJmena("Zadejte jméno");
-       String prijmeni = kontrolaJmena("Zadejte příjmení");
-       ArrayList<Pojistenci> vyhledani = pojistenec.vyhledatPojistence(jmeno, prijmeni);
+    private void vyhledatPojistence() {
+        String jmeno = kontrolaJmena("Zadejte jméno");
+        String prijmeni = kontrolaJmena("Zadejte příjmení");
+        ArrayList<Pojistenci> vyhledani = pojistenec.vyhledatPojistence(jmeno, prijmeni);
 
-       if(vyhledani.isEmpty()){
-           System.out.println("Pojištěnec není v databázi");
-       }else {
-           System.out.println("Nalezený pojištěnec:");
-           for (Pojistenci p: vyhledani){
-               System.out.println(p);
-           }
-       }
+        if (vyhledani.isEmpty()) {
+            System.out.println("Pojištěnec není v databázi");
+        } else {
+            System.out.println("Nalezený pojištěnec:");
+            for (Pojistenci p : vyhledani) {
+                System.out.println(p);
+            }
+        }
     }
 
-    private String kontrolaJmena(String udaje){
-       String scanner;
-       do{
-           System.out.println(udaje);
-           scanner = vstup.nextLine();
-           if(scanner.isBlank()){
-               System.out.println("Údaje nesmí být prázdné");
+    private String kontrolaJmena(String udaje) {
+        String scanner;
+        do {
+            System.out.println(udaje);
+            scanner = vstup.nextLine();
+            if (scanner.isBlank()) {
+                System.out.println("Údaje nesmí být prázdné");
 
-           } else if (scanner.length()< 3){
-               System.out.println("Jméno je příliš krátké");
+            } else if (scanner.length() < 3) {
+                System.out.println("Jméno je příliš krátké");
 
-           }
-       }while (scanner.isBlank()|| scanner.length() < 3);
-       return scanner;
+            }
+        } while (scanner.isBlank() || scanner.length() < 3);
+        return scanner;
     }
 
     private String kontrolaTelCisla(String telCislo){
