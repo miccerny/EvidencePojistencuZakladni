@@ -21,6 +21,7 @@ public class Hlavni {
         // Cyklus menu pojištěnců
         while (volba != 4) {
 
+
             // Metoa
             zobrazitMenu();
             volba = Integer.parseInt(vstup.nextLine());
