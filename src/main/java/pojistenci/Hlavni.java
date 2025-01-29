@@ -65,6 +65,7 @@ public class Hlavni {
         System.out.println("------------------------");
         System.out.println("Evidence pojistenych");
         System.out.println("------------------------\n");
+        System.out.println("Vyberte si akci:");
         System.out.println("1 - Přidat nového pojištěného");
         System.out.println("2 - Vypsat všechny pojištěné ");
         System.out.println("3 - Vyhledat Pojištěného");
