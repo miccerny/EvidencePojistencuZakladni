@@ -11,9 +11,11 @@ public class Hlavni {
         aplikace.spustit();
     }
 
+    // Deklarování metody vstupu a třídy SpravaPojištěnců
     private Scanner vstup = new Scanner(System.in);
     private SpravaPojistencu pojistenec = new SpravaPojistencu();
 
+    // Metoda pro vytvoření menu na základě vstupních hodnot uživatele 1-4
     public void spustit(){
         int volba = 0;
 
@@ -22,10 +24,17 @@ public class Hlavni {
         while (volba != 4) {
 
 
-            // Metoa
+
             zobrazitMenu();
             volba = Integer.parseInt(vstup.nextLine());
 
+            /*
+            Switch pro MENU volby 1-4 na základě volby0 vstupu od uživatele
+            1 - přidání pojištěnce
+            2 - vyhledání pojištěnce
+            3 - vyhledání všech pojištěnců
+            4 - Konec
+             */
             switch (volba) {
 
                 case 1:
@@ -50,6 +59,8 @@ public class Hlavni {
         }
 
     }
+
+    // Metoda pro zobrazení MENU volby 1-4
     private void zobrazitMenu(){
         System.out.println("------------------------");
         System.out.println("Evidence pojistenych");
@@ -60,6 +71,9 @@ public class Hlavni {
         System.out.println("4 - Konec");
     }
 
+    /*
+     Metoda pro vytvoření pojištěnce s kontrolou vstupu
+     */
     private void pridatPopjistence() {
 
         String jmeno = kontrolaJmena("Zadejte jméno:");
@@ -71,15 +85,21 @@ public class Hlavni {
         System.out.println("Data byla uložena");
     }
 
+    /*
+    Výpis všech pojištěnců z Arraylistu
+     */
     private void zobrazitVsechny(){
        pojistenec.vypisSeznamuPojistencu();
     }
 
+    /*
+  Vyhledání jednotlivých pojištěnců na základě Jména a Příjmení,
+  včetně validace zda se pojištěný nachází v databázi
+     */
     private void vyhledatPojistence() {
         String jmeno = kontrolaJmena("Zadejte jméno");
         String prijmeni = kontrolaJmena("Zadejte příjmení");
         ArrayList<Pojistenci> vyhledani = pojistenec.vyhledatPojistence(jmeno, prijmeni);
-
         if (vyhledani.isEmpty()) {
             System.out.println("Pojištěnec není v databázi");
         } else {
@@ -90,6 +110,10 @@ public class Hlavni {
         }
     }
 
+    /*
+    Validace Jmená a Příjmení při vytvoření pojištěnce.
+    Metoda kontroluje prázdné jméno a méně než 3 znaky ve jméně
+     */
     private String kontrolaJmena(String udaje) {
         String scanner;
         do {
@@ -106,6 +130,10 @@ public class Hlavni {
         return scanner;
     }
 
+    /*
+    Validace Telefoního čísla.
+    Kontroluje velikost telefonního čísla aby splňovalo formát ČR a doplňuje předvolbu ČR
+     */
     private String kontrolaTelCisla(String telCislo){
         String scanner;
         do {
@@ -121,6 +149,10 @@ public class Hlavni {
     }
 
 
+    /*
+    Validace věku
+    Kontroluje věk aby pojištěný nezadal záporné číslo a aby nezadal něco jiného než číslo
+     */
     private int kontrolaCiselnehoVstupu(String vek){
        int cislo;
        while (true){
