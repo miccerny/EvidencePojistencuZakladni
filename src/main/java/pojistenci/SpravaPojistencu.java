@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class SpravaPojistencu{
 
     /**
-     * Deklarace Kolekce Arraylist
+     Deklarace Kolekce Arraylist
      */
     private ArrayList<Pojistenci> seznamPojistencu = new ArrayList<>();
 
     /**
-     * metoda pro přidání pojištěného
+     Metoda pro přidání pojištěného
      * @param pojistenec
      */
     public void pridaniPojistence(Pojistenci pojistenec) {
@@ -18,7 +18,7 @@ public class SpravaPojistencu{
     }
 
     /**
-     * Metoda pro vyhledání pojištěného v ArrayList
+     Metoda pro vyhledání pojištěného v ArrayList
      * @param jmeno
      * @param prijmeni
      * @return
@@ -26,7 +26,9 @@ public class SpravaPojistencu{
     public ArrayList<Pojistenci> vyhledatPojistence(String jmeno, String prijmeni) {
         ArrayList<Pojistenci> nalezeny = new ArrayList<>();
 
-        // Cyklus iterující v ArrayList a hledání vstupních údajů v kolekci
+        /**
+         Cyklus iterující v ArrayList a hledání vstupních údajů v kolekci
+         */
         for (Pojistenci p: seznamPojistencu) {
             if (p.getJmeno().equalsIgnoreCase(jmeno) && p.getPrijmeni().equalsIgnoreCase(prijmeni)) {
                 nalezeny.add(p);
@@ -36,11 +38,11 @@ public class SpravaPojistencu{
     }
 
     /**
-     * Metoda pro výpis všech pojištěnců
+     Metoda pro výpis všech pojištěnců
      */
     public void vypisSeznamuPojistencu(){
         /**
-         * Kontrola zda je Kolekce prázdná nebo zda obsahuje pojištěnce a jejich vypsání
+         Kontrola zda je Kolekce prázdná nebo zda obsahuje pojištěnce a jejich vypsání
          */
         if(seznamPojistencu.isEmpty()){
             System.out.println("Seznam je prázdný");

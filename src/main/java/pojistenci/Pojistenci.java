@@ -1,5 +1,6 @@
 package pojistenci;
 
+
 public class Pojistenci {
 
 
@@ -10,7 +11,7 @@ public class Pojistenci {
     private String telefon;
 
     /**
-     *
+     Konstruktor
      * @param jmeno
      * @param prijmeni
      * @param vek
@@ -23,12 +24,18 @@ public class Pojistenci {
         this.telefon = telefon;
     }
 
-    // Getter pro Jméno pojištěnce
+    /**
+     Getter pro Jméno pojištěnce
+     * @return
+     */
     public String getJmeno(){
         return jmeno;
     }
 
-    // Getter pro příjmení pojištěnce
+    /**
+     Getter pro příjmení pojištěnce
+     * @return
+     */
     public String getPrijmeni() {
         return prijmeni;
     }

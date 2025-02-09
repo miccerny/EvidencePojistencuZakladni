@@ -24,7 +24,9 @@ public class Hlavni {
         int volba = 0;
 
 
-        // Cyklus menu pojištěnců
+        /**
+         * Cyklus menu pojištěnců
+          */
         while (volba != 4) {
 
 
@@ -120,8 +122,8 @@ public class Hlavni {
     }
 
     /**
-     * Validace Jmená a Příjmení při vytvoření pojištěnce.
-     * Metoda kontroluje prázdné jméno a méně než 3 znaky ve jméně
+     Validace Jmená a Příjmení při vytvoření pojištěnce.
+     Metoda kontroluje prázdné jméno a méně než 3 znaky ve jméně
      * @param udaje
      * @return
      */
@@ -142,8 +144,8 @@ public class Hlavni {
     }
 
     /**
-     * Validace Telefoního čísla.
-     * Kontroluje velikost telefonního čísla aby splňovalo formát ČR a doplňuje předvolbu ČR
+     Validace Telefoního čísla.
+     Kontroluje velikost telefonního čísla aby splňovalo formát ČR a doplňuje předvolbu ČR
      * @param telCislo
      * @return
      */
@@ -162,8 +164,8 @@ public class Hlavni {
     }
 
     /**
-     * Validace věku
-     *     Kontroluje věk aby pojištěný nezadal záporné číslo a aby nezadal něco jiného než číslo
+     Validace věku
+     Kontroluje věk aby pojištěný nezadal záporné číslo a aby nezadal něco jiného než číslo
      * @param vek
      * @return
      */
