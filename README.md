@@ -21,6 +21,7 @@ Pro představu si ukažme, jak může být realizováno několik z funkčností 
 
 Přidání pojištěného:
 
+![pridani pojisteneho](Snímek obrazovky z 2025-02-09 18-19-14.png)
 
 Výpis všech pojištěných:
 
