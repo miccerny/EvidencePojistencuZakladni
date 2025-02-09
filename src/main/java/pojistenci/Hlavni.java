@@ -11,11 +11,15 @@ public class Hlavni {
         aplikace.spustit();
     }
 
-    // Deklarování metody vstupu a třídy SpravaPojištěnců
+    /*
+     Deklarování metody vstupu a třídy SpravaPojištěnců
+     */
     private Scanner vstup = new Scanner(System.in);
     private SpravaPojistencu pojistenec = new SpravaPojistencu();
 
-    // Metoda pro vytvoření menu na základě vstupních hodnot uživatele 1-4
+    /*
+     Metoda pro vytvoření menu na základě vstupních hodnot uživatele 1-4
+     */
     public void spustit(){
         int volba = 0;
 
@@ -60,7 +64,10 @@ public class Hlavni {
 
     }
 
-    // Metoda pro zobrazení MENU volby 1-4
+
+    /*
+        Metoda pro zobrazení MENU volby 1-4
+     */
     private void zobrazitMenu(){
         System.out.println("------------------------");
         System.out.println("Evidence pojistenych");
@@ -94,9 +101,10 @@ public class Hlavni {
     }
 
     /*
-  Vyhledání jednotlivých pojištěnců na základě Jména a Příjmení,
-  včetně validace zda se pojištěný nachází v databázi
+     Vyhledání jednotlivých pojištěnců na základě Jména a Příjmení,
+    včetně validace zda se pojištěný nachází v databázi
      */
+
     private void vyhledatPojistence() {
         String jmeno = kontrolaJmena("Zadejte jméno");
         String prijmeni = kontrolaJmena("Zadejte příjmení");
@@ -111,9 +119,11 @@ public class Hlavni {
         }
     }
 
-    /*
-    Validace Jmená a Příjmení při vytvoření pojištěnce.
-    Metoda kontroluje prázdné jméno a méně než 3 znaky ve jméně
+    /**
+     * Validace Jmená a Příjmení při vytvoření pojištěnce.
+     * Metoda kontroluje prázdné jméno a méně než 3 znaky ve jméně
+     * @param udaje
+     * @return
      */
     private String kontrolaJmena(String udaje) {
         String scanner;
@@ -131,9 +141,11 @@ public class Hlavni {
         return scanner;
     }
 
-    /*
-    Validace Telefoního čísla.
-    Kontroluje velikost telefonního čísla aby splňovalo formát ČR a doplňuje předvolbu ČR
+    /**
+     * Validace Telefoního čísla.
+     * Kontroluje velikost telefonního čísla aby splňovalo formát ČR a doplňuje předvolbu ČR
+     * @param telCislo
+     * @return
      */
     private String kontrolaTelCisla(String telCislo){
         String scanner;
@@ -149,10 +161,11 @@ public class Hlavni {
             return "+420"+ scanner;
     }
 
-
-    /*
-    Validace věku
-    Kontroluje věk aby pojištěný nezadal záporné číslo a aby nezadal něco jiného než číslo
+    /**
+     * Validace věku
+     *     Kontroluje věk aby pojištěný nezadal záporné číslo a aby nezadal něco jiného než číslo
+     * @param vek
+     * @return
      */
     private int kontrolaCiselnehoVstupu(String vek){
        int cislo;

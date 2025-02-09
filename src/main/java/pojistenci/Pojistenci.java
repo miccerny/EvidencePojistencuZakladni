@@ -4,13 +4,18 @@ public class Pojistenci {
 
 
 
-    // Přiřazení proměnné pojištěnce
     private String jmeno;
     private String prijmeni;
     private int vek;
     private String telefon;
 
-    //Konstruktor
+    /**
+     *
+     * @param jmeno
+     * @param prijmeni
+     * @param vek
+     * @param telefon
+     */
     public Pojistenci (String jmeno, String prijmeni, int vek, String telefon){
         this.jmeno = jmeno;
         this.prijmeni = prijmeni;
@@ -29,7 +34,12 @@ public class Pojistenci {
     }
 
 
-    // Metoda toString pro výpis všech pojištěnců nebo jednotlivých pojištěnců
+
+
+    /**
+     * Metoda toString pro výpis všech pojištěnců nebo jednotlivých pojištěnců
+     * @return
+     */
     @Override
     public String toString(){
         return String.format("%s     %s,  Věk: %d let, Telefon: %s", jmeno, prijmeni, vek, telefon);
