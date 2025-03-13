@@ -18,18 +18,16 @@ public class Hlavni {
     private SpravaPojistencu pojistenec = new SpravaPojistencu();
 
     /*
-     Metoda pro vytvoření menu na základě vstupních hodnot uživatele 1-4
+     Metoda spuštění menu a volby možností v menu
+     na základě vstupních číselných hodnot uživatele 1-4
      */
     public void spustit(){
         int volba = 0;
-
 
         /**
          * Cyklus menu pojištěnců
           */
         while (volba != 4) {
-
-
 
             zobrazitMenu();
             volba = Integer.parseInt(vstup.nextLine());
@@ -66,7 +64,6 @@ public class Hlavni {
 
     }
 
-
     /*
         Metoda pro zobrazení MENU volby 1-4
      */
@@ -90,6 +87,7 @@ public class Hlavni {
         String prijmeni = kontrolaJmena("Zadejte příjmení:");
         int vek = kontrolaCiselnehoVstupu("Zadejte věk: ");
         String telefon = kontrolaTelCisla("Zadejte telefonní číslo:");
+
         Pojistenci novyPopjistenec = new Pojistenci(jmeno, prijmeni, vek, telefon);
         pojistenec.pridaniPojistence(novyPopjistenec);
         System.out.println("Data byla uložena");
@@ -110,7 +108,9 @@ public class Hlavni {
     private void vyhledatPojistence() {
         String jmeno = kontrolaJmena("Zadejte jméno");
         String prijmeni = kontrolaJmena("Zadejte příjmení");
+
         ArrayList<Pojistenci> vyhledani = pojistenec.vyhledatPojistence(jmeno, prijmeni);
+
         if (vyhledani.isEmpty()) {
             System.out.println("Pojištěnec není v databázi");
         } else {
@@ -128,6 +128,7 @@ public class Hlavni {
      * @return
      */
     private String kontrolaJmena(String udaje) {
+
         String scanner;
         do {
             System.out.println(udaje);
@@ -151,6 +152,7 @@ public class Hlavni {
      */
     private String kontrolaTelCisla(String telCislo){
         String scanner;
+
         do {
             System.out.print(telCislo+"\n+420");
             scanner = vstup.nextLine();

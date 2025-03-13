@@ -40,11 +40,8 @@ public class Pojistenci {
         return prijmeni;
     }
 
-
-
-
     /**
-     * Metoda toString pro výpis všech pojištěnců nebo jednotlivých pojištěnců
+     * toString pro výpis všech pojištěnců nebo jednotlivých pojištěnců
      * @return
      */
     @Override
